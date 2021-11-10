@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Excel | Glade</title>
+<meta name="description" content="知之为知之">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://haoenz.github.io/favicon.ico?v=1636530654287">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://haoenz.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://haoenz.github.io">
+        <img class="avatar" src="https://haoenz.github.io/images/avatar.png?v=1636530654287" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://haoenz.github.io">
+        <h1 class="site-title">Glade</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> Excel
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/l3j0-ioA9/">
+        <h2 class="post-title">Excel的FIND函数与SEARCH函数详解</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到<a href="https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628">FIND函数</a>或<a href="https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495">SEARCH函数</a>，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-10-22</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/hdEdT8fkQ/">
+                Excel
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/ucAj1PRfM/">
+        <h2 class="post-title">在Excel中根据单元格填充颜色计数</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-10-23</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/hdEdT8fkQ/">
+                Excel
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://haoenz.github.io/tag/a6O21z5c-7/">
+                Visual Basic
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">知之为知之</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://haoenz.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

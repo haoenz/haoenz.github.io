@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://haoenz.github.io</id>
+    <title>Glade</title>
+    <updated>2021-11-10T07:50:57.576Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://haoenz.github.io"/>
+    <link rel="self" href="https://haoenz.github.io/atom.xml"/>
+    <subtitle>知之为知之</subtitle>
+    <logo>https://haoenz.github.io/images/avatar.png</logo>
+    <icon>https://haoenz.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Glade</rights>
+    <entry>
+        <title type="html"><![CDATA[在PowerShell中使用压缩软件7z]]></title>
+        <id>https://haoenz.github.io/post/1zsciWvsx/</id>
+        <link href="https://haoenz.github.io/post/1zsciWvsx/">
+        </link>
+        <updated>2021-10-26T05:24:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>为了可以全局使用<code>7z</code>命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：</p>
+<pre><code class="language-PowerShell">Set-Alias 7z 'C:\Program Files\7-Zip\7z.exe'
+</code></pre>
+<p>将此命令添加到<code>$PROFILE</code>中重启终端即可全局使用<code>7z</code>命令调用7z命令行程序了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>为了可以全局使用<code>7z</code>命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：</p>
+<pre><code class="language-PowerShell">Set-Alias 7z 'C:\Program Files\7-Zip\7z.exe'
+</code></pre>
+<p>将此命令添加到<code>$PROFILE</code>中重启终端即可全局使用<code>7z</code>命令调用7z命令行程序了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Excel的FIND函数与SEARCH函数详解]]></title>
+        <id>https://haoenz.github.io/post/l3j0-ioA9/</id>
+        <link href="https://haoenz.github.io/post/l3j0-ioA9/">
+        </link>
+        <updated>2021-10-22T06:12:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到<a href="https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628">FIND函数</a>或<a href="https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495">SEARCH函数</a>，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到<a href="https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628">FIND函数</a>或<a href="https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495">SEARCH函数</a>，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[UCAS雁栖湖花式进/出城之二-九]]></title>
+        <id>https://haoenz.github.io/post/z1DfFx9Yv/</id>
+        <link href="https://haoenz.github.io/post/z1DfFx9Yv/">
+        </link>
+        <updated>2021-04-28T13:36:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文撰写于2021年2月末，最初发表在<a href="https://zhuanlan.zhihu.com/p/353108037">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+<hr>
+<p>关于路程时间：<strong>候车时间不计</strong>（因此每个方案的总用时仅供参考），室内换乘时间可能有一定误差，数据参考高德地图&amp;盛名时刻表。路径中铁路部分具体用时以我首次使用该路径时乘坐的车次为准。</p>
+<p>关于地铁票价：即使在地铁网络中并未按最短路径运行，也依然按最短路径计算票价（这也是实际中的情况），不考虑超时乘坐的额外收费，不考虑在路径中途进出收费区产生的额外费用。</p>
+<p>关于公交票价：按使用市政公交卡5折优惠处理。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文撰写于2021年2月末，最初发表在<a href="https://zhuanlan.zhihu.com/p/353108037">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+<hr>
+<p>关于路程时间：<strong>候车时间不计</strong>（因此每个方案的总用时仅供参考），室内换乘时间可能有一定误差，数据参考高德地图&amp;盛名时刻表。路径中铁路部分具体用时以我首次使用该路径时乘坐的车次为准。</p>
+<p>关于地铁票价：即使在地铁网络中并未按最短路径运行，也依然按最短路径计算票价（这也是实际中的情况），不考虑超时乘坐的额外收费，不考虑在路径中途进出收费区产生的额外费用。</p>
+<p>关于公交票价：按使用市政公交卡5折优惠处理。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[4472次运转&UCAS雁栖湖花式进/出城之一]]></title>
+        <id>https://haoenz.github.io/post/v_VJHcyJc/</id>
+        <link href="https://haoenz.github.io/post/v_VJHcyJc/">
+        </link>
+        <updated>2021-04-28T11:47:42.000Z</updated>
+        <summary type="html"><![CDATA[<p>本运转记录撰写于2020年国庆，最初发表在<a href="https://zhuanlan.zhihu.com/p/260837512">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本运转记录撰写于2020年国庆，最初发表在<a href="https://zhuanlan.zhihu.com/p/260837512">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Excel中根据单元格填充颜色计数]]></title>
+        <id>https://haoenz.github.io/post/ucAj1PRfM/</id>
+        <link href="https://haoenz.github.io/post/ucAj1PRfM/">
+        </link>
+        <updated>2019-10-23T12:11:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Selenium的Webdriver模块抓取网页信息]]></title>
+        <id>https://haoenz.github.io/post/hUERE01FT/</id>
+        <link href="https://haoenz.github.io/post/hUERE01FT/">
+        </link>
+        <updated>2019-10-22T02:16:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>女友前几天遇到一个问题，她在工作上需要保存一组ebay商品的展示图片并对其进行处理，于是希望能用Python写一个脚本来完成这个机械化的工作，便前来和我讨论。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>女友前几天遇到一个问题，她在工作上需要保存一组ebay商品的展示图片并对其进行处理，于是希望能用Python写一个脚本来完成这个机械化的工作，便前来和我讨论。</p>
+]]></content>
+    </entry>
+</feed>

@@ -1,0 +1,318 @@
+
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Glade</title>
+<meta name="description" content="知之为知之">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://haoenz.github.io/favicon.ico?v=1636530654287">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://haoenz.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://haoenz.github.io">
+        <img class="avatar" src="https://haoenz.github.io/images/avatar.png?v=1636530654287" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://haoenz.github.io">
+        <h1 class="site-title">Glade</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/1zsciWvsx/">
+        <h2 class="post-title">在PowerShell中使用压缩软件7z</h2>
+      </a>
+      <div class="post-abstract">
+        <p>为了可以全局使用<code>7z</code>命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：</p>
+<pre><code class="language-PowerShell">Set-Alias 7z 'C:\Program Files\7-Zip\7z.exe'
+</code></pre>
+<p>将此命令添加到<code>$PROFILE</code>中重启终端即可全局使用<code>7z</code>命令调用7z命令行程序了。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-10-26</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/KddZGgXbY/">
+                PowerShell
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/l3j0-ioA9/">
+        <h2 class="post-title">Excel的FIND函数与SEARCH函数详解</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到<a href="https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628">FIND函数</a>或<a href="https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495">SEARCH函数</a>，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-10-22</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/hdEdT8fkQ/">
+                Excel
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/z1DfFx9Yv/">
+        <h2 class="post-title">UCAS雁栖湖花式进/出城之二-九</h2>
+      </a>
+      <div class="post-abstract">
+        <p>本文撰写于2021年2月末，最初发表在<a href="https://zhuanlan.zhihu.com/p/353108037">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+<hr>
+<p>关于路程时间：<strong>候车时间不计</strong>（因此每个方案的总用时仅供参考），室内换乘时间可能有一定误差，数据参考高德地图&amp;盛名时刻表。路径中铁路部分具体用时以我首次使用该路径时乘坐的车次为准。</p>
+<p>关于地铁票价：即使在地铁网络中并未按最短路径运行，也依然按最短路径计算票价（这也是实际中的情况），不考虑超时乘坐的额外收费，不考虑在路径中途进出收费区产生的额外费用。</p>
+<p>关于公交票价：按使用市政公交卡5折优惠处理。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-04-28</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/celn81xZO/">
+                轨道交通
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://haoenz.github.io/tag/r4OTSDd06y/">
+                轨迹记录
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/v_VJHcyJc/">
+        <h2 class="post-title">4472次运转&amp;UCAS雁栖湖花式进/出城之一</h2>
+      </a>
+      <div class="post-abstract">
+        <p>本运转记录撰写于2020年国庆，最初发表在<a href="https://zhuanlan.zhihu.com/p/260837512">知乎专栏</a>上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-04-28</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/celn81xZO/">
+                轨道交通
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://haoenz.github.io/tag/r4OTSDd06y/">
+                轨迹记录
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/ucAj1PRfM/">
+        <h2 class="post-title">在Excel中根据单元格填充颜色计数</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-10-23</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/hdEdT8fkQ/">
+                Excel
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://haoenz.github.io/tag/a6O21z5c-7/">
+                Visual Basic
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://haoenz.github.io/post/hUERE01FT/">
+        <h2 class="post-title">使用Selenium的Webdriver模块抓取网页信息</h2>
+      </a>
+      <div class="post-abstract">
+        <p>女友前几天遇到一个问题，她在工作上需要保存一组ebay商品的展示图片并对其进行处理，于是希望能用Python写一个脚本来完成这个机械化的工作，便前来和我讨论。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-10-22</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://haoenz.github.io/tag/Pl5n982sB/">
+                Python
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">知之为知之</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://haoenz.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
