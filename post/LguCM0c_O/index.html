@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>Glade</title>
+<title>在PowerShell中使用conda | Glade</title>
 <meta name="description" content="知之为知之">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,115 +77,65 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          
+          <h2 class="post-title">在PowerShell中使用conda</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-12-05</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://haoenz.github.io/tag/Pl5n982sB/">
+                    Python
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://haoenz.github.io/tag/KddZGgXbY/">
+                    PowerShell
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>最新版本的Anaconda其实自带PowerShell Prompt了，只是使用的还是Windows 10的默认终端conhost.exe。似乎Windows 11的默认终端已经更新成Windows Terminal了，但是我暂时还不想升级到Windows 11，因此需要做一些非常简单配置。</p>
+<!-- more -->
+<p>其实只有一条命令：打开Anaconda Prompt，运行</p>
+<pre><code class="language-bash">conda init powershell
+</code></pre>
+<p>这样不论从哪里打开PowerShell，都能够自动载入Anaconda的环境了。不过部分oh-my-posh的主题可能无法正常显示conda所处的环境，因此可能还需要在主题文件中加入一项：</p>
+<pre><code class="language-json">{
+     &quot;type&quot;: &quot;envvar&quot;,
+     &quot;style&quot;: &quot;plain&quot;,
+     &quot;foreground&quot;: &quot;#FFDF59&quot;,
+     &quot;properties&quot;: {
+         &quot;var_name&quot;: &quot;CONDA_DEFAULT_ENV&quot;
+         }
+}
+</code></pre>
 
-<div class="archives-container">
-  
-    <h2 class="year">2021</h2>
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/LguCM0c_O/">
-            <h2 class="post-title">
-              在PowerShell中使用conda
-              <small>2021-12-05</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/1zsciWvsx/">
-            <h2 class="post-title">
-              在PowerShell中使用压缩软件7z
-              <small>2021-10-26</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/l3j0-ioA9/">
-            <h2 class="post-title">
-              Excel的FIND函数与SEARCH函数详解
-              <small>2021-10-22</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/z1DfFx9Yv/">
-            <h2 class="post-title">
-              UCAS雁栖湖花式进/出城之二-九
-              <small>2021-04-28</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/v_VJHcyJc/">
-            <h2 class="post-title">
-              4472次运转&amp;UCAS雁栖湖花式进/出城之一
-              <small>2021-04-28</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-    
-      
-    
-  
-    <h2 class="year">2019</h2>
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/ucAj1PRfM/">
-            <h2 class="post-title">
-              在Excel中根据单元格填充颜色计数
-              <small>2019-10-23</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://haoenz.github.io/post/hUERE01FT/">
-            <h2 class="post-title">
-              使用Selenium的Webdriver模块抓取网页信息
-              <small>2019-10-22</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
-</div>
-
-
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://haoenz.github.io/post/1zsciWvsx/">
+              <h3 class="post-title">
+                下一篇：在PowerShell中使用压缩软件7z
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">知之为知之</div>
   <div class="social-container">
     
@@ -202,8 +154,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -219,6 +171,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>
