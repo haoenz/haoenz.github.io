@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>在PowerShell中使用压缩软件7z | Glade</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="https://haoenz.github.io/css/eureka.min.css">
+<script defer src="https://haoenz.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="为了可以全局使用7z命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：
+Set-Alias 7z &#39;C:\Program Files\7-Zip\7z.exe&#39;
+
+将此命令添加到$PROFILE中重启终端即可全局使用7z命令调用7z命令行程序了。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://haoenz.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"在PowerShell中使用压缩软件7z",
+      "item":"https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/"
+    },
+    "headline": "在PowerShell中使用压缩软件7z | Glade","datePublished": "2021-10-26T13:24:16+08:00",
+    "dateModified": "2021-10-26T13:24:16+08:00",
+    "wordCount":  718 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haoenz.github.io/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e为了可以全局使用\u003ccode\u003e7z\u003c\/code\u003e命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：\u003c\/p\u003e\n\u003cpre\u003e\u003ccode class=\u0022language-PowerShell\u0022\u003eSet-Alias 7z \u0027C:\\Program Files\\7-Zip\\7z.exe\u0027\r\n\u003c\/code\u003e\u003c\/pre\u003e\n\u003cp\u003e将此命令添加到\u003ccode\u003e$PROFILE\u003c\/code\u003e中重启终端即可全局使用\u003ccode\u003e7z\u003c\/code\u003e命令调用7z命令行程序了。\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="在PowerShell中使用压缩软件7z | Glade" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://haoenz.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/" />
+
+
+
+
+<meta property="og:description" content="为了可以全局使用7z命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：
+Set-Alias 7z &#39;C:\Program Files\7-Zip\7z.exe&#39;
+
+将此命令添加到$PROFILE中重启终端即可全局使用7z命令调用7z命令行程序了。" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Glade" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-10-26T13:24:16&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-10-26T13:24:16&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="PowerShell" />
+
+<meta property="article:tag" content="Windows" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Glade</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">日志</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">在PowerShell中使用压缩软件7z</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-10-26</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>为了可以全局使用<code>7z</code>命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：</p>
+<pre><code class="language-PowerShell">Set-Alias 7z 'C:\Program Files\7-Zip\7z.exe'
+</code></pre>
+<p>将此命令添加到<code>$PROFILE</code>中重启终端即可全局使用<code>7z</code>命令调用7z命令行程序了。</p>
+<p>7z具有繁多的命令和参数可供调用，在7-Zip Help文件中有详细的使用说明，以下摘录一些常用的使用情景以方便查阅。</p>
+<h3 id="查看压缩文件内容">查看压缩文件内容</h3>
+<pre><code class="language-PowerShell">7z l &lt;archive&gt; -sccUTF-8
+</code></pre>
+<p><code>7z l</code>命令会列出压缩文件中的所有文件。<code>-scc</code>开关控制在命令行输出时的编码，为了兼容中文，一般选用UTF-8编码。</p>
+<h3 id="解压文件">解压文件</h3>
+<pre><code class="language-PowerShell">7z x &lt;archive&gt; [-bso0] [-o{path}] [-p{password}]
+</code></pre>
+<p>其中<code>7z x</code>命令代表按压缩文件中的路径结构进行解压。相对地，<code>7z e</code>命令会将压缩文件中所有层级的所有文件全部解压到当前文件夹，因此并不推荐使用。</p>
+<p><code>-bs</code>开关控制程序在命令行中的输出，<code>-bso0</code>代表取消标准信息的输出，但不会影响错误信息和过程信息的输出。</p>
+<p><code>-o</code>开关控制文件解压后的位置，默认为当前目录，需要更改解压目录，或者压缩文件中文件过多解压出来后不便于整理时应当使用此开关。</p>
+<p><code>-p</code>开关控制解压密码。</p>
+<h3 id="压缩文件">压缩文件</h3>
+<pre><code class="language-PowerShell">7z a &lt;archive&gt; &lt;wildcard&gt;|&lt;filename&gt;|&lt;listfile&gt; [-t{type}] -sccUTF-8 [-m{x[1|3|5|7|9]}] 
+</code></pre>
+<p><code>7z a</code>命令将文件添加到压缩文件中，如果目标压缩文件不存在，则创建一个。</p>
+<p>被添加的可以是单个文件或文件夹，也可以是使用通配符选取的多个文件或文件夹，还可以是某个纯文本文件中列出的若干个指路径的文件或文件夹。使用最后一种形式时，在作为listfile的纯文本文件的路径前要加``@```符号。</p>
+<p><code>-t</code>开关指定压缩文件的类型，具体的类型说明详见帮助文档。当不使用此开关时，程序自动根据压缩文件的文件名推测类型，如无法推测，则默认为.7z文件。</p>
+<p><code>-m</code>开关指定压缩的具体方法，<code>-mx</code>代表压缩程度，后接的数字越大，压缩程度越高，0代表仅打包不压缩。</p>
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="https://haoenz.github.io/tags/powershell/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#PowerShell</a>
+    
+    <a href="https://haoenz.github.io/tags/windows/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Windows</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/" class="block">PowerShell 7安装配置小记</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/" class="block">Excel的LOOKUP、VLOOKUP、HLOOKUP、XLOOKUP函数详解</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://haoenz.github.io/">H. Zhang</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

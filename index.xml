@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glade</title>
+    <link>https://haoenz.github.io/</link>
+    <description>Recent content on Glade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 08 Dec 2021 15:44:33 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell 7安装配置小记</title>
+      <link>https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Wed, 08 Dec 2021 15:44:33 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在PowerShell中使用压缩软件7z</title>
+      <link>https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/</link>
+      <pubDate>Tue, 26 Oct 2021 13:24:16 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/</guid>
+      <description>&lt;p&gt;为了可以全局使用&lt;code&gt;7z&lt;/code&gt;命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-PowerShell&#34;&gt;Set-Alias 7z &#39;C:\Program Files\7-Zip\7z.exe&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将此命令添加到&lt;code&gt;$PROFILE&lt;/code&gt;中重启终端即可全局使用&lt;code&gt;7z&lt;/code&gt;命令调用7z命令行程序了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Excel的LOOKUP、VLOOKUP、HLOOKUP、XLOOKUP函数详解</title>
+      <link>https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Fri, 22 Oct 2021 14:30:11 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</guid>
+      <description>&lt;p&gt;Excel中的LOOKUP一族函数主要用于已知某份数据的某一属性信息时，根据数据表去查询该份数据的其他属性的信息。从目的上来说，LOOKUP一族函数有些类似SQL数据库中的JOIN操作。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Excel的FIND函数与SEARCH函数详解</title>
+      <link>https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Fri, 22 Oct 2021 14:12:54 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</guid>
+      <description>&lt;p&gt;在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到&lt;a href=&#34;https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628&#34;&gt;FIND函数&lt;/a&gt;或&lt;a href=&#34;https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495&#34;&gt;SEARCH函数&lt;/a&gt;，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCAS雁栖湖花式进出城之二-九</title>
+      <link>https://haoenz.github.io/posts/ucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%BA%8C-%E4%B9%9D/</link>
+      <pubDate>Wed, 28 Apr 2021 21:36:11 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/ucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%BA%8C-%E4%B9%9D/</guid>
+      <description>&lt;p&gt;本文撰写于2021年2月末，最初发表在&lt;a href=&#34;https://zhuanlan.zhihu.com/p/353108037&#34;&gt;知乎专栏&lt;/a&gt;上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;关于路程时间：&lt;strong&gt;候车时间不计&lt;/strong&gt;（因此每个方案的总用时仅供参考），室内换乘时间可能有一定误差，数据参考高德地图&amp;amp;盛名时刻表。路径中铁路部分具体用时以我首次使用该路径时乘坐的车次为准。&lt;/p&gt;
+&lt;p&gt;关于地铁票价：即使在地铁网络中并未按最短路径运行，也依然按最短路径计算票价（这也是实际中的情况），不考虑超时乘坐的额外收费，不考虑在路径中途进出收费区产生的额外费用。&lt;/p&gt;
+&lt;p&gt;关于公交票价：按使用市政公交卡5折优惠处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>4472次运转&amp;UCAS雁栖湖花式进出城之一</title>
+      <link>https://haoenz.github.io/posts/4472%E6%AC%A1%E8%BF%90%E8%BD%ACucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%B8%80/</link>
+      <pubDate>Wed, 28 Apr 2021 19:47:42 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/4472%E6%AC%A1%E8%BF%90%E8%BD%ACucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%B8%80/</guid>
+      <description>&lt;p&gt;本运转记录撰写于2020年国庆，最初发表在&lt;a href=&#34;https://zhuanlan.zhihu.com/p/260837512&#34;&gt;知乎专栏&lt;/a&gt;上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在Excel中根据单元格填充颜色计数</title>
+      <link>https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</link>
+      <pubDate>Wed, 23 Oct 2019 20:11:48 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</guid>
+      <description>&lt;p&gt;在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Selenium的Webdriver模块抓取网页信息</title>
+      <link>https://haoenz.github.io/posts/%E4%BD%BF%E7%94%A8selenium%E7%9A%84webdriver%E6%A8%A1%E5%9D%97%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Tue, 22 Oct 2019 10:16:21 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/%E4%BD%BF%E7%94%A8selenium%E7%9A%84webdriver%E6%A8%A1%E5%9D%97%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF/</guid>
+      <description>&lt;p&gt;女友前几天遇到一个问题，她在工作上需要保存一组ebay商品的展示图片并对其进行处理，于是希望能用Python写一个脚本来完成这个机械化的工作，便前来和我讨论。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

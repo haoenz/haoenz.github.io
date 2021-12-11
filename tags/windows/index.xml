@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Glade</title>
+    <link>https://haoenz.github.io/tags/windows/</link>
+    <description>Recent content in Windows on Glade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 08 Dec 2021 15:44:33 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell 7安装配置小记</title>
+      <link>https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Wed, 08 Dec 2021 15:44:33 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在PowerShell中使用压缩软件7z</title>
+      <link>https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/</link>
+      <pubDate>Tue, 26 Oct 2021 13:24:16 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/</guid>
+      <description>&lt;p&gt;为了可以全局使用&lt;code&gt;7z&lt;/code&gt;命令，可以将7z的安装目录加入系统环境变量，也可以为其声明一条别名，后者的影响范围较小且修改更便捷，因此采用后者：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-PowerShell&#34;&gt;Set-Alias 7z &#39;C:\Program Files\7-Zip\7z.exe&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将此命令添加到&lt;code&gt;$PROFILE&lt;/code&gt;中重启终端即可全局使用&lt;code&gt;7z&lt;/code&gt;命令调用7z命令行程序了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

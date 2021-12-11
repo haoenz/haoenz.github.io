@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Glade</title>
+<title>在PowerShell中使用conda | Glade</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="https://haoenz.github.io/css/eureka.min.css">
@@ -58,25 +58,59 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Eureka is a elegant and powerful theme for Hugo.">
+  content="最新版本的Anaconda其实自带PowerShell Prompt了，只是使用的还是Windows 10的默认终端conhost.exe。似乎Windows 11的默认终端已经更新成Windows Terminal了，但是我暂时还不想升级到Windows 11，因此需要做一些非常简单配置。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://haoenz.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"在PowerShell中使用conda",
+      "item":"https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8conda/"}]
+}
+</script>
 
 
 
-<meta property="og:title" content="Glade" />
-<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8conda/"
+    },
+    "headline": "在PowerShell中使用conda | Glade","datePublished": "2021-12-05T22:21:06+08:00",
+    "dateModified": "2021-12-05T22:21:06+08:00",
+    "wordCount":  279 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haoenz.github.io/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e最新版本的Anaconda其实自带PowerShell Prompt了，只是使用的还是Windows 10的默认终端conhost.exe。似乎Windows 11的默认终端已经更新成Windows Terminal了，但是我暂时还不想升级到Windows 11，因此需要做一些非常简单配置。\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="在PowerShell中使用conda | Glade" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://haoenz.github.io/images/icon.png">
 
 
-<meta property="og:url" content="https://haoenz.github.io/tags/" />
+<meta property="og:url" content="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8conda/" />
 
 
 
 
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
+<meta property="og:description" content="最新版本的Anaconda其实自带PowerShell Prompt了，只是使用的还是Windows 10的默认终端conhost.exe。似乎Windows 11的默认终端已经更新成Windows Terminal了，但是我暂时还不想升级到Windows 11，因此需要做一些非常简单配置。" />
 
 
 
@@ -93,14 +127,31 @@
 
 
 
-<meta property="og:updated_time" content="2021-12-08T15:44:33&#43;08:00" />
+<meta property="article:published_time" content="2021-12-05T22:21:06&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-12-05T22:21:06&#43;08:00" />
 
 
 
-<meta property="article:section" content="tags" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://haoenz.github.io/tags/index.xml" title="Glade" />
+<meta property="article:tag" content="PowerShell" />
+
+<meta property="article:tag" content="Windows" />
+
+<meta property="article:tag" content="Python" />
+
+
+
+
+
+<meta property="og:see_also" content="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/" />
+
+<meta property="og:see_also" content="https://haoenz.github.io/posts/%E4%BD%BF%E7%94%A8selenium%E7%9A%84webdriver%E6%A8%A1%E5%9D%97%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF/" />
+
+
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -120,7 +171,7 @@
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">日志</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">日志</a>
         </div>
 
         <div class="flex">
@@ -171,41 +222,109 @@
   <main class="flex-grow pt-16">
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">Tags</h1>
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">在PowerShell中使用conda</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-05</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
     
-</article>
-<div class="bg-secondary-bg rounded px-6 py-8">
     
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/powershell/" class="text-eureka hover:underline">PowerShell</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/windows/" class="text-eureka hover:underline">Windows</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/excel/" class="text-eureka hover:underline">Excel</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/%E8%BD%A8%E8%BF%B9%E8%AE%B0%E5%BD%95/" class="text-eureka hover:underline">轨迹记录</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A/" class="text-eureka hover:underline">轨道交通</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/visual-basic/" class="text-eureka hover:underline">Visual Basic</a>
-    </h2>
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="https://haoenz.github.io/tags/python/" class="text-eureka hover:underline">Python</a>
-    </h2>
+
     
 </div>
+        
+        
+        
+
+        <div class="content">
+            <p>最新版本的Anaconda其实自带PowerShell Prompt了，只是使用的还是Windows 10的默认终端conhost.exe。似乎Windows 11的默认终端已经更新成Windows Terminal了，但是我暂时还不想升级到Windows 11，因此需要做一些非常简单配置。</p>
+<p>其实只有一条命令：打开Anaconda Prompt，运行</p>
+<pre><code class="language-bash">conda init powershell
+</code></pre>
+<p>这样不论从哪里打开PowerShell，都能够自动载入Anaconda的环境了。不过部分oh-my-posh的主题可能无法正常显示conda所处的环境，因此可能还需要在主题文件中加入一项：</p>
+<pre><code class="language-json">{
+     &quot;type&quot;: &quot;envvar&quot;,
+     &quot;style&quot;: &quot;plain&quot;,
+     &quot;foreground&quot;: &quot;#FFDF59&quot;,
+     &quot;properties&quot;: {
+         &quot;var_name&quot;: &quot;CONDA_DEFAULT_ENV&quot;
+         }
+}
+</code></pre>
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="https://haoenz.github.io/tags/powershell/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#PowerShell</a>
+    
+    <a href="https://haoenz.github.io/tags/windows/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Windows</a>
+    
+    <a href="https://haoenz.github.io/tags/python/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Python</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/" class="block">PowerShell 7安装配置小记</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://haoenz.github.io/posts/minecraft%E5%BC%80%E6%9C%8D%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="block">Minecraft开服简明教程</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/">在PowerShell中使用压缩软件7z</a>
+            <br />
+            
+            <a href="https://haoenz.github.io/posts/%E4%BD%BF%E7%94%A8selenium%E7%9A%84webdriver%E6%A8%A1%E5%9D%97%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF/">使用Selenium的Webdriver模块抓取网页信息</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
 
       </div>
     </div>

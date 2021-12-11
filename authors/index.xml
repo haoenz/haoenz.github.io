@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Glade</title>
+    <link>https://haoenz.github.io/authors/</link>
+    <description>Recent content in Authors on Glade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
+</copyright><atom:link href="https://haoenz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

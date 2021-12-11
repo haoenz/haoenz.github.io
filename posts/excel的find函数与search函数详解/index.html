@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Excel的FIND函数与SEARCH函数详解 | Glade</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="https://haoenz.github.io/css/eureka.min.css">
+<script defer src="https://haoenz.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到FIND函数或SEARCH函数，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://haoenz.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Excel的FIND函数与SEARCH函数详解",
+      "item":"https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/"
+    },
+    "headline": "Excel的FIND函数与SEARCH函数详解 | Glade","datePublished": "2021-10-22T14:12:54+08:00",
+    "dateModified": "2021-10-22T14:12:54+08:00",
+    "wordCount":  516 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haoenz.github.io/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到\u003ca href=\u0022https:\/\/support.microsoft.com\/zh-cn\/office\/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628\u0022\u003eFIND函数\u003c\/a\u003e或\u003ca href=\u0022https:\/\/support.microsoft.com\/zh-cn\/office\/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495\u0022\u003eSEARCH函数\u003c\/a\u003e，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="Excel的FIND函数与SEARCH函数详解 | Glade" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://haoenz.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/" />
+
+
+
+
+<meta property="og:description" content="在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到FIND函数或SEARCH函数，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Glade" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-10-22T14:12:54&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-10-22T14:12:54&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="Excel" />
+
+
+
+
+
+<meta property="og:see_also" content="https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Glade</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">日志</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Excel的FIND函数与SEARCH函数详解</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-10-22</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到<a href="https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628">FIND函数</a>或<a href="https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495">SEARCH函数</a>，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。</p>
+<p><strong>FIND(find_text,within_text,start_num=1)<strong>用于在</strong>within_text</strong>中定位<strong>find_text</strong>，并返回第一个文本串的起始位置的值，该值从第二个文本串的第一个字符算起。在以上官方链接中对语法的说明已经足够详细，在此仅对参数为数组的情况做一点补充。</p>
+<p>FIND函数的两个必需参数<strong>find_text</strong>和<strong>within_text</strong>均可为数组，此时FIND函数的返回值亦为一数组，其行数等于上述两参数中行数较大者，列数亦然。对于返回值的内容，为方便起见，以下用Python语法来进行描述。</p>
+<pre><code class="language-python">result[row][col]=FIND(find_text[row][col],within_text[row][col])
+</code></pre>
+<p>若某一参数缺失一到两个维度，则默认直接取消对应的下标运算符，如</p>
+<pre><code class="language-python">#find_text为一维列数组，within_text为二维数组
+result[row][col]=FIND(find_text[row],within_text[row][col])
+
+#find_text为一维行数组，within_text为一维列数组
+result[row][col]=FIND(find_text[col],within_text[row])
+
+#find_text为一维列数组，within_text非数组
+result[row]=FIND(find_text[row],within_text)
+</code></pre>
+<p>除上述情况之外，若参数数组发生越界，则对应的返回值单元格中显示 <strong>#N/A</strong>。</p>
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="https://haoenz.github.io/tags/excel/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Excel</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/" class="block">Excel的LOOKUP、VLOOKUP、HLOOKUP、XLOOKUP函数详解</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://haoenz.github.io/posts/ucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%BA%8C-%E4%B9%9D/" class="block">UCAS雁栖湖花式进出城之二-九</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/">在Excel中根据单元格填充颜色计数</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://haoenz.github.io/">H. Zhang</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

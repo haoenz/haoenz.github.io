@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>轨迹记录 on Glade</title>
+    <link>https://haoenz.github.io/tags/%E8%BD%A8%E8%BF%B9%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 轨迹记录 on Glade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 28 Apr 2021 21:36:11 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/%E8%BD%A8%E8%BF%B9%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCAS雁栖湖花式进出城之二-九</title>
+      <link>https://haoenz.github.io/posts/ucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%BA%8C-%E4%B9%9D/</link>
+      <pubDate>Wed, 28 Apr 2021 21:36:11 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/ucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%BA%8C-%E4%B9%9D/</guid>
+      <description>&lt;p&gt;本文撰写于2021年2月末，最初发表在&lt;a href=&#34;https://zhuanlan.zhihu.com/p/353108037&#34;&gt;知乎专栏&lt;/a&gt;上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;关于路程时间：&lt;strong&gt;候车时间不计&lt;/strong&gt;（因此每个方案的总用时仅供参考），室内换乘时间可能有一定误差，数据参考高德地图&amp;amp;盛名时刻表。路径中铁路部分具体用时以我首次使用该路径时乘坐的车次为准。&lt;/p&gt;
+&lt;p&gt;关于地铁票价：即使在地铁网络中并未按最短路径运行，也依然按最短路径计算票价（这也是实际中的情况），不考虑超时乘坐的额外收费，不考虑在路径中途进出收费区产生的额外费用。&lt;/p&gt;
+&lt;p&gt;关于公交票价：按使用市政公交卡5折优惠处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>4472次运转&amp;UCAS雁栖湖花式进出城之一</title>
+      <link>https://haoenz.github.io/posts/4472%E6%AC%A1%E8%BF%90%E8%BD%ACucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%B8%80/</link>
+      <pubDate>Wed, 28 Apr 2021 19:47:42 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/4472%E6%AC%A1%E8%BF%90%E8%BD%ACucas%E9%9B%81%E6%A0%96%E6%B9%96%E8%8A%B1%E5%BC%8F%E8%BF%9B%E5%87%BA%E5%9F%8E%E4%B9%8B%E4%B8%80/</guid>
+      <description>&lt;p&gt;本运转记录撰写于2020年国庆，最初发表在&lt;a href=&#34;https://zhuanlan.zhihu.com/p/260837512&#34;&gt;知乎专栏&lt;/a&gt;上，在这里重发一方面是为了整理自己写过的东西，另一方面也是为了测试如何在Hexo中插入图片题注。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

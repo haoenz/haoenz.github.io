@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>PowerShell 7安装配置小记 | Glade</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="https://haoenz.github.io/css/eureka.min.css">
+<script defer src="https://haoenz.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://haoenz.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"PowerShell 7安装配置小记",
+      "item":"https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/"
+    },
+    "headline": "PowerShell 7安装配置小记 | Glade","datePublished": "2021-12-08T15:44:33+08:00",
+    "dateModified": "2021-12-08T15:44:33+08:00",
+    "wordCount":  2838 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haoenz.github.io/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="PowerShell 7安装配置小记 | Glade" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://haoenz.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/" />
+
+
+
+
+<meta property="og:description" content="折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Glade" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-08T15:44:33&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-12-08T15:44:33&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="PowerShell" />
+
+<meta property="article:tag" content="Windows" />
+
+
+
+
+
+<meta property="og:see_also" content="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Glade</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">日志</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">PowerShell 7安装配置小记</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-08</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>6分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>折腾了一段时间的PowerShell 7，最大的感受是在安装和文件管理上有些混乱，我很不喜欢装完软件之后不知道它到底被装到哪里去了的那种感觉。所以觉得需要写一篇小记记录一些遇到的坑和需要注意的一些细节。</p>
+<h2 id="安装powershell-7">安装PowerShell 7</h2>
+<p>首先安装微软的包管理工具<a href="https://www.microsoft.com/zh-cn/p/app-installer/9nblggh4nns1">winget</a>，在Windows Store中直接安装即可。</p>
+<p>接下来面临的问题是：对于PowerShell 7，是使用winget安装，还是<a href="https://www.microsoft.com/zh-cn/p/powershell/9mz1snwt0n5d">使用Windows Store安装</a>呢？</p>
+<p>这两者是有一些细微的区别的。如果直接使用winget安装，本质上是下载github上的msi包然后运行，PowerShell会被安装到<code>C:\Program Files\</code>下。如果使用Windows Store安装，PowerShell会被安装为一个WindowsApp，亦即被安装到<code>C:\Program Files\WindowsApps\</code>下。</p>
+<p>两种情况都能使用winget进行更新，但是WindowsApp还能通过Windows Store进行更新，另外出于一些个人偏好的原因，我最终选择的是WindowsApp版本。</p>
+<h2 id="配置psreadline">配置PSReadLine</h2>
+<p>PSReadLine模块为PowerShell提供的命令补全、基于输入历史记录的智能提示、快捷键等重要功能。在较早的PowerShell版本中，PSReadLine是要使用以下命令手动安装的：</p>
+<pre><code class="language-powershell">Install-Module PSReadLine
+</code></pre>
+<p>但在最新的版本中，PSReadLine已经内置于PowerShell安装包中。但根据历史记录补全功能默认是关闭的，需要执行以下命令启用：</p>
+<pre><code class="language-powershell">Set-PSReadLineOption -PredictionSource History #可加入$PROFILE中
+</code></pre>
+<p>更多由PSReadLine提供功能的信息可以在<a href="https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline">微软的技术文档</a>中找到。</p>
+<p>更多利用PSReadLine进行的配置会在后面编辑profile的小节中提到。</p>
+<h2 id="安装并配置oh-my-posh">安装并配置oh-my-posh</h2>
+<p>著名Powershell美化工具oh-my-posh能够方便地配置主题，只是接下来要面临同样的问题：对于这个工具，是使用winget安装，还是使用<code>Install-Module</code>安装呢？</p>
+<p>使用winget安装的oh-my-posh位于<code>%HOMEPATH%\AppData\Local\Programs\</code>下。而使用<code>Install-Module</code>安装的oh-my-posh默认则位于<code>%HOMEPATH%\Documents\PowerShell\Modules\</code>下，更新和卸载也要使用PowerShell内置的Module管理命令，与winget完全独立。</p>
+<p>由于两种安装方式存在较大的差异，因此以下分别记录并比较。</p>
+<hr>
+<h3 id="使用install-module安装oh-my-posh">使用<code>Install-Module</code>安装oh-my-posh</h3>
+<pre><code class="language-powershell">Install-Module oh-my-posh #安装
+Import-Module oh-my-posh #导入
+
+#启用并设置主题，可加入$PROFILE中
+Set-PoshPrompt [主题名]
+
+Update-Module oh-my-posh #更新
+Uninstall-Module oh-my-posh #卸载
+</code></pre>
+<h3 id="使用winget安装oh-my-posh">使用winget安装oh-my-posh</h3>
+<pre><code class="language-powershell">winget install oh-my-posh #安装
+
+#启用并设置主题，可加入$PROFILE中
+oh-my-posh --init --shell pwsh --config [主题路径] | Invoke-Expression
+
+winget upgrade oh-my-posh #更新
+winget uninstall oh-my-posh #卸载
+</code></pre>
+<hr>
+<p>经过实验发现， 除去安装、更新和卸载的命令不同，两种方法安装的oh-my-posh主要区别在于，通过winget安装的oh-my-posh不会引入<code>Set-PoshPrompt</code>命令，且引入的其他指令也不会显示Source。而通过<code>Install-Module</code>引入的指令则会正常在Source属性中显示oh-my-posh。</p>
+<p>目前尚不清楚这是Bug还是特性，但在这些差异被统一之前，处于使用的便利性，我还是暂时先使用<code>Install-Module</code>命令来安装。</p>
+<h3 id="自定义oh-my-posh主题">自定义oh-my-posh主题</h3>
+<p>oh-my-posh自带了很多的主题可供选择，使用<code>Get-PoshThemes</code>命令可以查看所有安装目录下<code>themes</code>文件夹中所有主题的使用效果。其中有相当数量的主题依赖于PowerLine Fonts。当然我不一定最终会选用这些具有特殊字体的主题（有时候会觉得看起来太花里胡哨），但是知道怎么配置还是有必要的。</p>
+<p><a href="https://github.com/powerline/fonts">PowerLine Fonts</a>和进阶的<a href="https://www.nerdfonts.com/">NerdFonts</a>是以一些常用的编程字体为基础，将一些非常不常用的Unicode字符渲染成常用图标的特殊字体。在这两种字体库的官网选取并下载所需的.ttf或.otf字体文件安装，并调整对应终端的默认字体即可显示特殊字符。值得一提的是，微软有一款名为<a href="https://docs.microsoft.com/zh-cn/windows/terminal/cascadia-code">Cascadia Code</a>的与Windows Terminal同步开发的PowerLine字体，同时也支持连字，某种意义上可以说是官方推荐了。</p>
+<p><img src="https://www.nerdfonts.com/assets/img/sankey-glyphs-combined-diagram.png" alt="NerdFonts的图标库"></p>
+<p>接下来就是挑选一款合适的主题，然后在它的基础上做一些个性化修改了。我的主要需求是能显示主机名、用户名、当前路径名以及git信息、当前时间、上一条命令的运行时间和错误提示、当前是本地连接还是远程连接、当前Python环境等，并且最好分两行显示。</p>
+<p>最终我挑选了atomicbit主题作为模板，根据我自己的需求做了<a href="../../files/mytheme.omp.json">一些修改</a>，就像前面所提到的，我不喜欢PowerLine Fonts和NerdFonts较差的兼容性，所以最终我配置的主题中并不需要这些特殊字体，实际使用中效果如下。</p>
+<h2 id="安装posh-git">安装posh-git</h2>
+<p>很多教程都会将posh-git和oh-my-posh放在一起，但其实现在posh-git的作用已经比较鸡肋了。它提供的显示git状态的功能已经完全被oh-my-posh替代了，而且另一方面，即使不安装oh-my-posh，由posh-git修改的提示符也和conda的提示符有冲突。</p>
+<p>但是posh-git提供的git命令补全的功能还是有一定用处的，当然前提是已经安装了git。安装posh-git的命令如下：</p>
+<pre><code class="language-powershell">Install-Module posh-git #安装
+Import-Module posh-git #导入并启用
+</code></pre>
+<h2 id="配置profile">配置profile</h2>
+<p>详细的关于PowerShell配置文件的说明可以在<a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_profiles">微软的技术文档</a>中找到，这里只提两点注意：</p>
+<ul>
+<li>由于我是以WindowsApp形式安装的PowerShell，因此没有安装目录下的操作权限，所以无法新建并编辑针对所有用户生效的<code>$PROFILE.AllUsersCurrentHost</code>和<code>$PROFILE.AllUsersAllHosts</code>。不过反正也没有这个需求，为了减少启动时间（虽然我也没有测试到底能否达到这个目的），最好将所有的配置都置入<code>$PROFILE.CurrentUserAllHosts</code>，并保持<code>$PROFILE.CurrentUserCurrentHost</code>不存在。亦即，只编辑<code>%HOMEPATH%\Documents\PowerShell\Profile.ps1</code></li>
+<li>Visual Studio Code的所使用的PowerShell Integrated Console载入独立的配置文件，其位置是<code>%HOMEPATH%\Documents\PowerShell\Microsoft.VSCode_profile.ps1</code></li>
+</ul>
+<p>根据PSReadLine官方提供的<a href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">示例配置文件</a>，我根据自己目前的使用习惯设置了<a href="../../profile.ps1">自己配置文件</a>，主要是因为有部分高阶操作我现在完全用不到，放进配置文件也是徒增加载时间，等有需求了再改也不迟。</p>
+<h2 id="版本说明">版本说明</h2>
+<p>截至本文最近一次技术性修改时，文中所使用的各软件版本号分别为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">软件</th>
+<th style="text-align:center">版本号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">winget</td>
+<td style="text-align:center">1.1.12986</td>
+</tr>
+<tr>
+<td style="text-align:center">PowerShell</td>
+<td style="text-align:center">7.2.0</td>
+</tr>
+<tr>
+<td style="text-align:center">oh-my-posh</td>
+<td style="text-align:center">6.29.1</td>
+</tr>
+<tr>
+<td style="text-align:center">posh-git</td>
+<td style="text-align:center">1.0.0</td>
+</tr>
+<tr>
+<td style="text-align:center">Win 10</td>
+<td style="text-align:center">19044.1387</td>
+</tr>
+<tr>
+<td style="text-align:center">Win 11</td>
+<td style="text-align:center">22000.348</td>
+</tr>
+</tbody>
+</table>
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="https://haoenz.github.io/tags/powershell/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#PowerShell</a>
+    
+    <a href="https://haoenz.github.io/tags/windows/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Windows</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/" class="block">在PowerShell中使用压缩软件7z</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="https://haoenz.github.io/posts/%E5%9C%A8powershell%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B67z/">在PowerShell中使用压缩软件7z</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://haoenz.github.io/">H. Zhang</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
