@@ -8,16 +8,7 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Fri, 22 Oct 2021 14:30:11 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Excel的LOOKUP、VLOOKUP、HLOOKUP、XLOOKUP函数详解</title>
-      <link>https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>
-      <pubDate>Fri, 22 Oct 2021 14:30:11 +0800</pubDate>
-      
-      <guid>https://haoenz.github.io/posts/excel%E7%9A%84lookupvlookuphlookupxlookup%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</guid>
-      <description>&lt;p&gt;Excel中的LOOKUP一族函数主要用于已知某份数据的某一属性信息时，根据数据表去查询该份数据的其他属性的信息。从目的上来说，LOOKUP一族函数有些类似SQL数据库中的JOIN操作。&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Fri, 22 Oct 2021 14:12:54 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Excel的FIND函数与SEARCH函数详解</title>
       <link>https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>

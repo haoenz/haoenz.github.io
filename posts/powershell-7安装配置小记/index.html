@@ -86,7 +86,7 @@
         "@id": "https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/"
     },
     "headline": "PowerShell 7安装配置小记 | Glade","datePublished": "2021-12-08T15:44:33+08:00",
-    "dateModified": "2021-12-08T15:44:33+08:00",
+    "dateModified": "2021-12-11T16:43:00+08:00",
     "wordCount":  2838 ,
     "publisher": {
         "@type": "Person",
@@ -130,7 +130,7 @@
 <meta property="article:published_time" content="2021-12-08T15:44:33&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-12-08T15:44:33&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-11T16:43:00&#43;08:00" />
 
 
 
@@ -303,7 +303,7 @@ Import-Module posh-git #导入并启用
 <li>由于我是以WindowsApp形式安装的PowerShell，因此没有安装目录下的操作权限，所以无法新建并编辑针对所有用户生效的<code>$PROFILE.AllUsersCurrentHost</code>和<code>$PROFILE.AllUsersAllHosts</code>。不过反正也没有这个需求，为了减少启动时间（虽然我也没有测试到底能否达到这个目的），最好将所有的配置都置入<code>$PROFILE.CurrentUserAllHosts</code>，并保持<code>$PROFILE.CurrentUserCurrentHost</code>不存在。亦即，只编辑<code>%HOMEPATH%\Documents\PowerShell\Profile.ps1</code></li>
 <li>Visual Studio Code的所使用的PowerShell Integrated Console载入独立的配置文件，其位置是<code>%HOMEPATH%\Documents\PowerShell\Microsoft.VSCode_profile.ps1</code></li>
 </ul>
-<p>根据PSReadLine官方提供的<a href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">示例配置文件</a>，我根据自己目前的使用习惯设置了<a href="../../profile.ps1">自己配置文件</a>，主要是因为有部分高阶操作我现在完全用不到，放进配置文件也是徒增加载时间，等有需求了再改也不迟。</p>
+<p>根据PSReadLine官方提供的<a href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">示例配置文件</a>，我根据自己目前的使用习惯设置了<a href="../../files/profile.ps1">自己配置文件</a>，主要是因为有部分高阶操作我现在完全用不到，放进配置文件也是徒增加载时间，等有需求了再改也不迟。</p>
 <h2 id="版本说明">版本说明</h2>
 <p>截至本文最近一次技术性修改时，文中所使用的各软件版本号分别为：</p>
 <table>
@@ -360,6 +360,9 @@ Import-Module posh-git #导入并启用
         
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://haoenz.github.io/posts/win10%E5%88%A0%E9%99%A4%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A%E8%AF%AD%E9%94%AE%E7%9B%98%E7%9A%84%E6%96%B9%E6%B3%95/" class="block">Win10删除阿尔巴尼亚语键盘的方法</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">

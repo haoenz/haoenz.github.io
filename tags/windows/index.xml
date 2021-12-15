@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 08 Dec 2021 15:44:33 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Dec 2021 13:47:07 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10删除阿尔巴尼亚语键盘的方法</title>
+      <link>https://haoenz.github.io/posts/win10%E5%88%A0%E9%99%A4%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A%E8%AF%AD%E9%94%AE%E7%9B%98%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 15 Dec 2021 13:47:07 +0800</pubDate>
+      
+      <guid>https://haoenz.github.io/posts/win10%E5%88%A0%E9%99%A4%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A%E8%AF%AD%E9%94%AE%E7%9B%98%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;出于目前尚不明确的原因，我的Win10上时不时会冒出一个阿尔巴尼亚语键盘（SQI键盘），我尝试过多种方法来删除它，但是都不能根除，往往过了一段时间就又冒了出来。所以写下这篇日志记录一下采取过的方法，看看最后能不能根除这个问题。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>PowerShell 7安装配置小记</title>
       <link>https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/</link>

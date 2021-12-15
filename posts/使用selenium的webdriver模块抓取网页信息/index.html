@@ -86,7 +86,7 @@
         "@id": "https://haoenz.github.io/posts/%E4%BD%BF%E7%94%A8selenium%E7%9A%84webdriver%E6%A8%A1%E5%9D%97%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF/"
     },
     "headline": "使用Selenium的Webdriver模块抓取网页信息 | Glade","datePublished": "2019-10-22T10:16:21+08:00",
-    "dateModified": "2019-10-22T10:16:21+08:00",
+    "dateModified": "2021-12-15T13:42:00+08:00",
     "wordCount":  610 ,
     "publisher": {
         "@type": "Person",
@@ -130,7 +130,7 @@
 <meta property="article:published_time" content="2019-10-22T10:16:21&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2019-10-22T10:16:21&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-15T13:42:00&#43;08:00" />
 
 
 
@@ -255,7 +255,7 @@ for itemId in itemIdList:
 试着跑了一下却发现什么都没有发生，查看整个soup后发现，包含`'twitter:image'`的部分是通过js动态加载的，不能直接通过requests的get方法来抓取。因为我们两个都没有系统地学习过网络爬虫，这个问题让我们一筹莫展。因为我此前使用过编写过Minecraft的挂机脚本，我甚至想出了使用pyautogui来操作鼠标键盘「手动」保存Chrome上所看到的源码的dirty的方法。幸好，经过一番检索之后，我了解到可以用selenium来达成目的。-->
 <!--如果真的有人无聊到翻源码看到了这段注释…好吧，其实requests之所以不能用并不是出于我想到的那么复杂的原因，只是我一开始打错域名了而已，所以最后这个需求还是用requests实现的…因为这个低级错误太丢人了所以就注释掉了。-->
 <p>经过一番检索之后，我了解到可以用selenium来达成目的。selenium本来是一个用于测试Web应用程序的框架，它可以控制浏览器，以一种接近人类浏览模式的方式来处理网页，因此非常适合抓取这种有很多js内容的网页。</p>
-<h1 id="安装">安装</h1>
+<h2 id="安装">安装</h2>
 <p>Anaconda并不自带selenium模块，因此需要手动安装</p>
 <pre><code class="language-conda">pip install selenium
 </code></pre>
@@ -263,7 +263,7 @@ for itemId in itemIdList:
 <pre><code class="language-PowerShell">DISM.exe /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0
 </code></pre>
 <p>对于版本号在18以下的Edge，先在<a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">这里</a>下载对应版本的WebDriver，再将WebDriver所在的目录添加进系统的PATH变量（或者不添加PATH，此后在代码中传入WebDriver的路径）</p>
-<h1 id="解决">解决</h1>
+<h2 id="解决">解决</h2>
 <p>安装好selenium后，我们可以直接使用这个模块来完成加载网页和分析网页元素的工作</p>
 <pre><code class="language-python">from selenium import webdriver
 for itemId in itemIdList:
