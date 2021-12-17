@@ -86,8 +86,8 @@
         "@id": "https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/"
     },
     "headline": "PowerShell 7安装配置小记 | Glade","datePublished": "2021-12-08T15:44:33+08:00",
-    "dateModified": "2021-12-11T16:43:00+08:00",
-    "wordCount":  2838 ,
+    "dateModified": "2021-12-17T14:26:00+08:00",
+    "wordCount":  2904 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -130,7 +130,7 @@
 <meta property="article:published_time" content="2021-12-08T15:44:33&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-12-11T16:43:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-17T14:26:00&#43;08:00" />
 
 
 
@@ -283,8 +283,9 @@ winget upgrade oh-my-posh #更新
 winget uninstall oh-my-posh #卸载
 </code></pre>
 <hr>
-<p>经过实验发现， 除去安装、更新和卸载的命令不同，两种方法安装的oh-my-posh主要区别在于，通过winget安装的oh-my-posh不会引入<code>Set-PoshPrompt</code>命令，且引入的其他指令也不会显示Source。而通过<code>Install-Module</code>引入的指令则会正常在Source属性中显示oh-my-posh。</p>
-<p>目前尚不清楚这是Bug还是特性，但在这些差异被统一之前，处于使用的便利性，我还是暂时先使用<code>Install-Module</code>命令来安装。</p>
+<p>除去安装、更新和卸载的命令不同，两种方法安装的oh-my-posh主要区别在于，通过winget安装的oh-my-posh不会引入命令<code>Set-PoshPrompt</code>，且由于不是作为Module安装，引入的命令也不会显示Source。而通过<code>Install-Module</code>引入的命令则会正常在Source属性中显示oh-my-posh。</p>
+<!--目前尚不清楚这是Bug还是特性，但在这些差异被统一之前，出于使用的便利性，我还是暂时先使用```Install-Module```命令来安装。-->
+<p><code>Set-PoshPrompt</code>本身是<a href="https://ohmyposh.dev/docs/faq#the-term-set-theme-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program">用来替代早期版本</a>中的<code>Set-Theme</code>的，但是<a href="https://github.com/JanDeDobbeleer/oh-my-posh/issues/1453">作者又声称</a><code>Set-PoshPrompt</code>也已经被弃用。目前尚不清楚这个命令会在正式被删除，但出于使用的便利性，我还是倾向于暂时先使用<code>Install-Module</code>命令来安装。</p>
 <h3 id="自定义oh-my-posh主题">自定义oh-my-posh主题</h3>
 <p>oh-my-posh自带了很多的主题可供选择，使用<code>Get-PoshThemes</code>命令可以查看所有安装目录下<code>themes</code>文件夹中所有主题的使用效果。其中有相当数量的主题依赖于PowerLine Fonts。当然我不一定最终会选用这些具有特殊字体的主题（有时候会觉得看起来太花里胡哨），但是知道怎么配置还是有必要的。</p>
 <p><a href="https://github.com/powerline/fonts">PowerLine Fonts</a>和进阶的<a href="https://www.nerdfonts.com/">NerdFonts</a>是以一些常用的编程字体为基础，将一些非常不常用的Unicode字符渲染成常用图标的特殊字体。在这两种字体库的官网选取并下载所需的.ttf或.otf字体文件安装，并调整对应终端的默认字体即可显示特殊字符。值得一提的是，微软有一款名为<a href="https://docs.microsoft.com/zh-cn/windows/terminal/cascadia-code">Cascadia Code</a>的与Windows Terminal同步开发的PowerLine字体，同时也支持连字，某种意义上可以说是官方推荐了。</p>
