@@ -58,7 +58,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://haoenz.github.io/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。">
+  content="
+办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,8 +87,8 @@
         "@id": "https://haoenz.github.io/posts/windows%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE/"
     },
     "headline": "Windows远程服务端配置 | Glade","datePublished": "2021-12-25T15:54:52+08:00",
-    "dateModified": "2021-12-29T19:30:32+08:00",
-    "wordCount":  2669 ,
+    "dateModified": "2021-12-30T00:50:53+08:00",
+    "wordCount":  2727 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -96,7 +97,7 @@
             "url": "https://haoenz.github.io/images/icon.png"
         }
         },
-    "description": "\u003cp\u003e办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。\u003c\/p\u003e"
+    "description": "\u003c!--TODO：添加ssh-agent、验证密钥是否必须在server生成、set-acl权限控制--\u003e\n\u003cp\u003e办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="Windows远程服务端配置 | Glade" />
 <meta property="og:type" content="article" />
@@ -110,7 +111,8 @@
 
 
 
-<meta property="og:description" content="办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。" />
+<meta property="og:description" content="
+办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。" />
 
 
 
@@ -130,7 +132,7 @@
 <meta property="article:published_time" content="2021-12-25T15:54:52&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-12-29T19:30:32&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-30T00:50:53&#43;08:00" />
 
 
 
@@ -245,7 +247,8 @@
         
 
         <div class="content">
-            <p>办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。</p>
+            <!--TODO：添加ssh-agent、验证密钥是否必须在server生成、set-acl权限控制-->
+<p>办公室配的台式机性能和网速都比我自己的这台超极本要好得多，因此我希望可以即使不在办公室时也能使用它的资源。换句话说，我想把办公室的台式机作为远程服务器来使用。这需要进行一些简单的配置，在未做特别说明时，本文中的客户端为Win10系统，服务端为Win11系统。</p>
 <p>本文中所有配置文件中的中文注释仅起提示说明作用，为了保证兼容性，建议实际配置时删去。</p>
 <h2 id="远程桌面连接">远程桌面连接</h2>
 <p>最简单的连接方式是使用Windows自带的远程桌面来连接，微软的文档已经对此提供了详尽的说明，而且本身配置也非常简单，因此不再赘述，详情参见<a href="https://docs.microsoft.com/zh-cn/troubleshoot/windows-server/remote/remote-desktop-services-overview">这里</a>与<a href="https://docs.microsoft.com/zh-cn/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients">这里</a>。</p>
@@ -255,10 +258,10 @@
 <p>首先要保证服务端已安装<strong>OpenSSH 服务器</strong>组件，客户端已安装<strong>OpenSSH 客户端</strong>组件，如果缺少对应组件，可以在系统设置中的<strong>可选功能</strong>中添加。默认连接到服务端的Shell程序不一定是我们需要的，可以修改注册表来设置。</p>
 <pre><code class="language-powershell">New-ItemProperty -Path &quot;HKLM:\SOFTWARE\OpenSSH&quot; -Name DefaultShell -Value $所需Shell路径 -PropertyType String -Force
 </code></pre>
-<p>使用以下命令生成（服务端或客户端均可）一对RSA密钥，口令可置空。</p>
+<p>使用以下命令在服务端生成一对RSA密钥，口令可置空。</p>
 <pre><code class="language-powershell">ssh-keygen -t rsa -f $密钥文件名
 </code></pre>
-<p>将无后缀名的私钥文件置入客户端的<code>%USERPROFILE%\.ssh\</code>下，将后缀为.pub的公钥文件内容添加到服务端的对应公钥文件（具体路径见后）末尾。并在配置文件<code>C:\ProgramData\ssh\sshd_config</code>中添加（或取消注释）以下设置：</p>
+<p>将无后缀名的私钥文件置入客户端的<code>~\.ssh\</code>下，将后缀为.pub的公钥文件内容添加到服务端的对应公钥文件（具体路径见后）末尾。并在配置文件<code>C:\ProgramData\ssh\sshd_config</code>中添加（或取消注释）以下设置：</p>
 <pre><code class="language-text">PubkeyAuthentication yes #允许密钥登录
 PasswordAuthentication yes #允许密码登录
 </code></pre>
@@ -266,12 +269,13 @@ PasswordAuthentication yes #允许密码登录
 <h4 id="密钥不生效仍需密码登录">密钥不生效，仍需密码登录</h4>
 <p>这可能是由于服务端公钥的访问权限设置不当导致的，根据ssh连接到服务端时的权限不同，有两种设置方式。由于Windows在UAC控制下没有方便的命令行下的提权手段，因此在保证安全的前提下给予ssh连接管理员权限会更方便。以下操作参考了<a href="https://stackoverflow.com/questions/16212816/setting-up-openssh-for-windows-using-public-key-authentication">这里的回答</a>和<a href="https://www.concurrency.com/blog/may-2019/key-based-authentication-for-openssh-on-windows">这篇文章</a>。</p>
 <h5 id="连接为普通用户">连接为普通用户</h5>
-<p>将公钥文件内容添加到服务端的<code>~\.ssh\authorized_keys</code>末尾，依次进入<strong>属性</strong>面板-&gt;<strong>安全</strong>选项卡-&gt;<strong>高级</strong>选项，在高级安全设置中禁用对应用户权限继承，并删除多余用户所有权限，只保留对应用户与SYSTEM的完全控制权限，这些操作也可以通过命令行完成：</p>
-<pre><code class="language-powershell">$acl = Get-Acl C:\ProgramData\ssh\administrators_authorized_keys
+<p>将公钥文件内容添加到服务端的<code>~\.ssh\authorized_keys</code>末尾，依次进入<strong>属性</strong>面板-&gt;<strong>安全</strong>选项卡-&gt;<strong>高级</strong>选项，在高级安全设置中禁用对应用户权限继承，并删除多余用户所有权限，只保留对应用户与SYSTEM的完全控制权限，这些操作也可以通过以下的命令完成：</p>
+<pre><code class="language-powershell">Get-Content $公钥路径 &gt;&gt; $env:USERPROFILE\.ssh\authorized_keys
+$acl = Get-Acl $env:USERPROFILE\.ssh\authorized_keys
 $acl.SetAccessRuleProtection($true, $false)
 $userRule = New-Object system.security.accesscontrol.filesystemaccessrule($userName,&quot;FullControl&quot;,&quot;Allow&quot;)
 $systemRule = New-Object system.security.accesscontrol.filesystemaccessrule(&quot;SYSTEM&quot;,&quot;FullControl&quot;,&quot;Allow&quot;)
-$acl.SetAccessRule($administratorsRule)
+$acl.SetAccessRule($userRule)
 $acl.SetAccessRule($systemRule)
 $acl | Set-Acl
 </code></pre>
@@ -281,7 +285,8 @@ $acl | Set-Acl
 </code></pre>
 <h5 id="连接为管理员用户">连接为管理员用户</h5>
 <p>将公钥文件内容添加到服务端的<code>C:\ProgramData\ssh\administrators_authorized_keys</code>末尾，与以上操作类似，仅保留Adminstrators与SYSTEM的完全控制权限，这些操作也可以通过命令行完成：</p>
-<pre><code class="language-powershell">$acl = Get-Acl C:\ProgramData\ssh\administrators_authorized_keys
+<pre><code class="language-powershell">Get-Content $公钥路径 &gt;&gt; C:\ProgramData\ssh\administrators_authorized_keys
+$acl = Get-Acl C:\ProgramData\ssh\administrators_authorized_keys
 $acl.SetAccessRuleProtection($true, $false)
 $administratorsRule = New-Object system.security.accesscontrol.filesystemaccessrule(&quot;Administrators&quot;,&quot;FullControl&quot;,&quot;Allow&quot;)
 $systemRule = New-Object system.security.accesscontrol.filesystemaccessrule(&quot;SYSTEM&quot;,&quot;FullControl&quot;,&quot;Allow&quot;)
@@ -307,10 +312,15 @@ PasswordAuthentication yes #允许密码登录
 PermitRootLogin yes #允许root登录
 PubkeyAUthentication yes #允许密钥登录
 </code></pre>
-<p>接着重启ssh服务：</p>
-<pre><code class="language-zsh">sudo service ssh --full-restart
+<p>接着生成密钥并设置权限，并重启ssh服务：</p>
+<pre><code class="language-zsh">cd ~/.ssh
+ssh-keygen -t rsa -f $密钥文件名
+cat id_rsa.pub &gt;&gt; authorized_keys
+sudo chmod 600 authorized_keys
+sudo chmod 700 ~/.ssh
+service ssh restart
 </code></pre>
-<p>至此已经可以在宿主机（也就是服务端）本身使用ssh连接到WSL了。</p>
+<p>最后将私钥放到访问端（客户端或者服务端宿主机）的<code>~\.ssh\</code>下，至此已经可以在宿主机本身使用ssh连接到WSL了。</p>
 <h4 id="添加防火墙规则">添加防火墙规则</h4>
 <p>由于设置了新的端口，因此要添加对应的防火墙规则才能实现客户端的访问：</p>
 <pre><code class="language-powershell">netsh advfirewall firewall add rule name=WSL dir=in action=allow protocol=TCP localport=23
