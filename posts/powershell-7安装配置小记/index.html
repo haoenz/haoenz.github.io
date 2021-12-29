@@ -86,8 +86,8 @@
         "@id": "https://haoenz.github.io/posts/powershell-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/"
     },
     "headline": "PowerShell 7安装配置小记 | Glade","datePublished": "2021-12-08T15:44:33+08:00",
-    "dateModified": "2021-12-17T14:26:00+08:00",
-    "wordCount":  2904 ,
+    "dateModified": "2021-12-25T16:45:40+08:00",
+    "wordCount":  2917 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -130,7 +130,7 @@
 <meta property="article:published_time" content="2021-12-08T15:44:33&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2021-12-17T14:26:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-25T16:45:40&#43;08:00" />
 
 
 
@@ -260,7 +260,7 @@
 <p>更多利用PSReadLine进行的配置会在后面编辑profile的小节中提到。</p>
 <h2 id="安装并配置oh-my-posh">安装并配置oh-my-posh</h2>
 <p>著名Powershell美化工具oh-my-posh能够方便地配置主题，只是接下来要面临同样的问题：对于这个工具，是使用winget安装，还是使用<code>Install-Module</code>安装呢？</p>
-<p>使用winget安装的oh-my-posh位于<code>%HOMEPATH%\AppData\Local\Programs\</code>下。而使用<code>Install-Module</code>安装的oh-my-posh默认则位于<code>%HOMEPATH%\Documents\PowerShell\Modules\</code>下，更新和卸载也要使用PowerShell内置的Module管理命令，与winget完全独立。</p>
+<p>使用winget安装的oh-my-posh位于<code>%USERPROFILE%\AppData\Local\Programs\</code>下。而使用<code>Install-Module</code>安装的oh-my-posh默认则位于<code>%USERPROFILE%\Documents\PowerShell\Modules\</code>下，更新和卸载也要使用PowerShell内置的Module管理命令，与winget完全独立。</p>
 <p>由于两种安装方式存在较大的差异，因此以下分别记录并比较。</p>
 <hr>
 <h3 id="使用install-module安装oh-my-posh">使用<code>Install-Module</code>安装oh-my-posh</h3>
@@ -285,7 +285,7 @@ winget uninstall oh-my-posh #卸载
 <hr>
 <p>除去安装、更新和卸载的命令不同，两种方法安装的oh-my-posh主要区别在于，通过winget安装的oh-my-posh不会引入命令<code>Set-PoshPrompt</code>，且由于不是作为Module安装，引入的命令也不会显示Source。而通过<code>Install-Module</code>引入的命令则会正常在Source属性中显示oh-my-posh。</p>
 <!--目前尚不清楚这是Bug还是特性，但在这些差异被统一之前，出于使用的便利性，我还是暂时先使用```Install-Module```命令来安装。-->
-<p><code>Set-PoshPrompt</code>本身是<a href="https://ohmyposh.dev/docs/faq#the-term-set-theme-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program">用来替代早期版本</a>中的<code>Set-Theme</code>的，但是<a href="https://github.com/JanDeDobbeleer/oh-my-posh/issues/1453">作者又声称</a><code>Set-PoshPrompt</code>也已经被弃用。目前尚不清楚这个命令会在正式被删除，但出于使用的便利性，我还是倾向于暂时先使用<code>Install-Module</code>命令来安装。</p>
+<p><code>Set-PoshPrompt</code>本身是<a href="https://ohmyposh.dev/docs/faq#the-term-set-theme-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program">用来替代早期版本</a>中的<code>Set-Theme</code>的，但是<a href="https://github.com/JanDeDobbeleer/oh-my-posh/issues/1453">作者又声称</a><code>Set-PoshPrompt</code>也已经被弃用。目前尚不清楚这个命令会在何时正式被删除，但出于使用的便利性，我还是倾向于暂时先使用<code>Install-Module</code>命令来安装。</p>
 <h3 id="自定义oh-my-posh主题">自定义oh-my-posh主题</h3>
 <p>oh-my-posh自带了很多的主题可供选择，使用<code>Get-PoshThemes</code>命令可以查看所有安装目录下<code>themes</code>文件夹中所有主题的使用效果。其中有相当数量的主题依赖于PowerLine Fonts。当然我不一定最终会选用这些具有特殊字体的主题（有时候会觉得看起来太花里胡哨），但是知道怎么配置还是有必要的。</p>
 <p><a href="https://github.com/powerline/fonts">PowerLine Fonts</a>和进阶的<a href="https://www.nerdfonts.com/">NerdFonts</a>是以一些常用的编程字体为基础，将一些非常不常用的Unicode字符渲染成常用图标的特殊字体。在这两种字体库的官网选取并下载所需的.ttf或.otf字体文件安装，并调整对应终端的默认字体即可显示特殊字符。值得一提的是，微软有一款名为<a href="https://docs.microsoft.com/zh-cn/windows/terminal/cascadia-code">Cascadia Code</a>的与Windows Terminal同步开发的PowerLine字体，同时也支持连字，某种意义上可以说是官方推荐了。</p>
@@ -301,8 +301,8 @@ Import-Module posh-git #导入并启用
 <h2 id="配置profile">配置profile</h2>
 <p>详细的关于PowerShell配置文件的说明可以在<a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_profiles">微软的技术文档</a>中找到，这里只提两点注意：</p>
 <ul>
-<li>由于我是以WindowsApp形式安装的PowerShell，因此没有安装目录下的操作权限，所以无法新建并编辑针对所有用户生效的<code>$PROFILE.AllUsersCurrentHost</code>和<code>$PROFILE.AllUsersAllHosts</code>。不过反正也没有这个需求，为了减少启动时间（虽然我也没有测试到底能否达到这个目的），最好将所有的配置都置入<code>$PROFILE.CurrentUserAllHosts</code>，并保持<code>$PROFILE.CurrentUserCurrentHost</code>不存在。亦即，只编辑<code>%HOMEPATH%\Documents\PowerShell\Profile.ps1</code></li>
-<li>Visual Studio Code的所使用的PowerShell Integrated Console载入独立的配置文件，其位置是<code>%HOMEPATH%\Documents\PowerShell\Microsoft.VSCode_profile.ps1</code></li>
+<li>由于我是以WindowsApp形式安装的PowerShell，因此没有安装目录下的操作权限，所以无法新建并编辑针对所有用户生效的<code>$PROFILE.AllUsersCurrentHost</code>和<code>$PROFILE.AllUsersAllHosts</code>。不过反正也没有这个需求，为了减少启动时间（虽然我也没有测试到底能否达到这个目的），最好将所有的配置都置入<code>$PROFILE.CurrentUserAllHosts</code>，并保持<code>$PROFILE.CurrentUserCurrentHost</code>不存在。亦即，只编辑<code>%USERPROFILE%\Documents\PowerShell\Profile.ps1</code></li>
+<li>Visual Studio Code的所使用的PowerShell Integrated Console载入独立的配置文件，其位置是<code>%USERPROFILE%\Documents\PowerShell\Microsoft.VSCode_profile.ps1</code></li>
 </ul>
 <p>根据PSReadLine官方提供的<a href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">示例配置文件</a>，我根据自己目前的使用习惯设置了<a href="../../files/profile.ps1">自己配置文件</a>，主要是因为有部分高阶操作我现在完全用不到，放进配置文件也是徒增加载时间，等有需求了再改也不迟。</p>
 <h2 id="版本说明">版本说明</h2>
@@ -310,8 +310,8 @@ Import-Module posh-git #导入并启用
 <table>
 <thead>
 <tr>
-<th style="text-align:center">软件</th>
-<th style="text-align:center">版本号</th>
+<th style="text-align:center">Software</th>
+<th style="text-align:center">Version</th>
 </tr>
 </thead>
 <tbody>
@@ -321,7 +321,7 @@ Import-Module posh-git #导入并启用
 </tr>
 <tr>
 <td style="text-align:center">PowerShell</td>
-<td style="text-align:center">7.2.0</td>
+<td style="text-align:center">7.2.1</td>
 </tr>
 <tr>
 <td style="text-align:center">oh-my-posh</td>
@@ -332,12 +332,12 @@ Import-Module posh-git #导入并启用
 <td style="text-align:center">1.0.0</td>
 </tr>
 <tr>
-<td style="text-align:center">Win 10</td>
-<td style="text-align:center">19044.1387</td>
+<td style="text-align:center">Windows 10 CoreCountrySpecific</td>
+<td style="text-align:center">19044.1415</td>
 </tr>
 <tr>
-<td style="text-align:center">Win 11</td>
-<td style="text-align:center">22000.348</td>
+<td style="text-align:center">Windows 11 Professional</td>
+<td style="text-align:center">22000.376</td>
 </tr>
 </tbody>
 </table>
