@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Excel on Glade</title>
-    <link>https://haoenz.github.io/tags/excel/</link>
+    <link>/tags/excel/</link>
     <description>Recent content in Excel on Glade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://haoenz.github.io/&#34;&gt;H. Zhang&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Fri, 22 Oct 2021 14:12:54 +0800</lastBuildDate><atom:link href="https://haoenz.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 14:12:54 +0800</lastBuildDate><atom:link href="/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Excel的FIND函数与SEARCH函数详解</title>
-      <link>https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>
+      <link>/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Fri, 22 Oct 2021 14:12:54 +0800</pubDate>
       
-      <guid>https://haoenz.github.io/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>/posts/excel%E7%9A%84find%E5%87%BD%E6%95%B0%E4%B8%8Esearch%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</guid>
       <description>&lt;p&gt;在Excel中，需要在一个字符串中查找另一个字符串时，我们会用到&lt;a href=&#34;https://support.microsoft.com/zh-cn/office/find-findb-%E5%87%BD%E6%95%B0-c7912941-af2a-4bdf-a553-d0d89b0a0628&#34;&gt;FIND函数&lt;/a&gt;或&lt;a href=&#34;https://support.microsoft.com/zh-cn/office/search-searchb-%E5%87%BD%E6%95%B0-9ab04538-0e55-4719-a72e-b6f54513b495&#34;&gt;SEARCH函数&lt;/a&gt;，两者的区别仅在于，SEARCH函数不区分大小写且支持通配符，因此以下仅对FIND函数进行说明。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在Excel中根据单元格填充颜色计数</title>
-      <link>https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</link>
+      <link>/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</link>
       <pubDate>Wed, 23 Oct 2019 20:11:48 +0800</pubDate>
       
-      <guid>https://haoenz.github.io/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</guid>
+      <guid>/posts/%E5%9C%A8excel%E4%B8%AD%E6%A0%B9%E6%8D%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2%E8%AE%A1%E6%95%B0/</guid>
       <description>&lt;p&gt;在维护我的城市轨道交通乘降记录表时，我使用了不同的填充颜色来标记我在某个站点乘降时是否进出了付费区。因此在统计某条线路的乘降比时，我希望能够直接按单元格填充颜色来计数。经过检索后发现达成这个目的主要有利用GET.CELL函数定义名称和使用VBA编写函数两种方式，而我认为后者的使用更加方便灵活。&lt;/p&gt;</description>
     </item>
     
