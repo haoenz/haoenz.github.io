@@ -6,7 +6,7 @@
 <title>Windows远程服务端配置 | Glade</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
-<link rel="stylesheet" href="/css/eureka.min.css">
+<link rel="stylesheet" href="/css/eureka.css">
 <script defer src="/js/eureka.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +88,7 @@
     },
     "headline": "Windows远程服务端配置 | Glade","datePublished": "2021-12-25T15:54:52+08:00",
     "dateModified": "2022-11-18T03:50:07+08:00",
-    "wordCount":  3296 ,
+    "wordCount":  3317 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -375,8 +375,10 @@ Register-ScheduledTask -TaskName &quot;StartSSH&quot; -User $user -Action $scrip
 <p>在Linux中，则需要在Shell启动文件（如<code>.bashrc</code>,<code>.zshrc</code>等）中启动服务并添加私钥</p>
 <pre><code class="language-shell">eval &quot;$(ssh-agent -s)&quot;
 ssh-add $私钥路径
+
+trap &quot;source $Shell登出文件路径&quot; EXIT
 </code></pre>
-<p>注意还需要再Shell的退出文件（如<code>.bash_logout</code>,<code>.zlogout</code>等）中添加<code>ssh-agent -k</code>手动关闭服务，否则服务进程会一直存在。</p>
+<p>最后还需要再Shell的退出文件（如<code>.bash_logout</code>,<code>.zlogout</code>等）中添加<code>ssh-agent -k</code>手动关闭服务，否则服务进程会一直存在。</p>
 <h3 id="移动端操作">移动端操作</h3>
 <p>偶尔也会有需要在移动端上ssh连接到服务器的需求，在这种情况下可以使用Termius（iOS）和JuiceSSH（Android）这两款程序。</p>
 <h2 id="内网穿透">内网穿透</h2>
