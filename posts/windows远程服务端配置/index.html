@@ -88,7 +88,7 @@
     },
     "headline": "Windows远程服务端配置 | Glade","datePublished": "2021-12-25T15:54:52+08:00",
     "dateModified": "2022-11-18T03:50:07+08:00",
-    "wordCount":  3215 ,
+    "wordCount":  3296 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -348,14 +348,14 @@ netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=23
 $WSLip=$Matches['ip'] 
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=23 connectaddress=$WSLip connectport=23
 </code></pre>
-<p>将以上脚本保存到合适位置，如```%USERPROFIE\Scripts\startSSH.ps1``。如前所述，Windows没有方便的命令行提权手段，因此开机以管理员权限自动运行脚本最方便的方式可能是设定任务计划：</p>
+<p>将以上脚本保存到合适位置，如<code>%USERPROFIE\Scripts\startSSH.ps1</code>。如前所述，Windows没有方便的命令行提权手段，因此开机以管理员权限自动运行脚本最方便的方式可能是设定任务计划：</p>
 <pre><code class="language-powershell">$user=whoami
 $scriptPath=&quot;$env:USERPROFILE\Scripts\startSSH.ps1&quot;
 $script=New-ScheduledTaskAction -Execute &quot;pwsh&quot; -Argument &quot;-WindowStyle Hidden `&quot;$scriptPath`&quot;&quot;
 $trigger=New-ScheduledTaskTrigger -AtLogOn -User $user
 Register-ScheduledTask -TaskName &quot;StartSSH&quot; -User $user -Action $script -Trigger $trig -RunLevel Highest
 </code></pre>
-<p>这个操作也可以通过在Win+R打开的运行窗口中输入taskschd.msc并确认打开任务计划程序，随后选择<strong>创建基本任务</strong>来完成。</p>
+<p>这个操作也可以通过在Win+R打开的运行窗口中输入taskschd.msc并确认打开任务计划程序，随后选择<strong>创建基本任务</strong>来完成。需要注意的是，如果PowerShell是通过Microsoft Store等方式安装的，任务计划程序可能无法在登录时识别其所在的路径，从而需要指定<code>pwsh.exe</code>的具体路径。</p>
 <h3 id="客户端私钥管理">客户端私钥管理</h3>
 <p>对于非默认命名的私钥，还需要设置好私钥与对应服务端的对应关系，有两种方式可供参考，这两种方式也可以共同使用。</p>
 <h4 id="ssh配置文件">ssh配置文件</h4>
